@@ -33,8 +33,13 @@ body {
   font-family: Verdana, sans-serif;
   font-size: 2.5rem;
   color: black;
-
+  overflow: hidden;
   -webkit-user-drag: none;
+}
+
+.display p {
+  overflow: hidden;
+  margin: 0;
 }
 
 .buttons {
