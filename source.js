@@ -1,7 +1,7 @@
 let display = document.querySelector(".displayText");
 const numbers = document.querySelectorAll(".number");
-const clear = document.querySelector(".clear");
-const del = document.querySelector(".del");
+const clearBtn = document.querySelector(".clear");
+const delbtn = document.querySelector(".del");
 const opertors = document.querySelectorAll(".sign");
 
 function add(a, b) {
@@ -20,6 +20,28 @@ function devide(a, b) {
 function power(a, b) {
 	return a ** b;
 }
+
+function clear() {
+	display.textContent = "";
+	console.log("Display cleared");
+}
+
+function del() {
+	if (display.textContent.length <= 0) {
+		return;
+	} else {
+		console.log(display.textContent.slice(0, -1));
+		display.textContent = display.textContent.slice(0, -1);
+	}
+}
+
+delbtn.addEventListener("click", () => del());
+clearBtn.addEventListener("click", () => clear());
+
+let number1 = "";
+let number2 = "";
+let operator = "";
+
 function operate(a, b, operator) {
 	switch (operator) {
 		case "+":
@@ -39,6 +61,7 @@ function operate(a, b, operator) {
 			break;
 	}
 }
+
 numbers.forEach((number) => {
 	number.addEventListener("click", () => {
 		display.textContent += number.textContent;

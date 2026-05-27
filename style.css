@@ -87,3 +87,7 @@ body {
   scale: 0.95;
   transition: scale 150ms ease-in-out;
 }
+
+.row .button.clear {
+  background-color: red;
+}
